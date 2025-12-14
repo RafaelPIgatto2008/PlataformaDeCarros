@@ -20,14 +20,6 @@ O objetivo principal desta aplicação é fornecer um *backend* robusto para:
 | **SQLite** | Base de dados leve e baseada em ficheiros, ideal para desenvolvimento e testes. |
 | **Git & GitHub** | Sistema de controlo de versões. |
 
-## 🏗️ Estrutura da Solução
-
-O projeto segue um padrão de organização limpo, separando responsabilidades em *namespaces*:
-
-* **`Models/`**: Contém as **Classes de Entidade** (ex: `Carro`), que mapeiam diretamente para as tabelas da base de dados.
-* **`Data/`**: Contém o **Contexto da Base de Dados** (`PlataformaContext`), que herda de `DbContext` e gere a conexão e as operações de dados.
-* **`Migrations/`**: Pasta gerada pelo EF Core, que contém o histórico de alterações no esquema da base de dados.
-
 ## 🚀 Como Executar o Projeto Localmente
 
 Siga estes passos para configurar e executar a aplicação no seu ambiente.
