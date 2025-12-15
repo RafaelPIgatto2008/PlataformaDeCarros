@@ -1,7 +1,10 @@
-﻿namespace PlataformaDeCarros.Entities;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class BaseEntity<TGuid>
+namespace PlataformaDeCarros.Entities;
+
+public abstract class BaseEntity
 {
-    public TGuid Id { get; set; }
-    public DateTime CreatedAt { get; set; }
+    [Key]
+    public Guid Id { get; protected set; }
+    public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
 }

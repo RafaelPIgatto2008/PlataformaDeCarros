@@ -1,6 +1,6 @@
 ﻿namespace PlataformaDeCarros.Entities;
 
-public class Car : BaseEntity<Guid>
+public class Car : BaseEntity
 {
 
     public string Model { get; set; }

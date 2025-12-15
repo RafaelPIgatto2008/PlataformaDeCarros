@@ -1,6 +1,6 @@
 ﻿namespace PlataformaDeCarros.Entities;
 
-public class Attendant : BaseEntity<Guid>
+public class Attendant : BaseEntity
 {
 
     public string Name { get; set; }
