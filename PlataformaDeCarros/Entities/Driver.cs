@@ -1,6 +1,6 @@
 ﻿namespace PlataformaDeCarros.Entities;
 
-public class Driver : BaseEntity<Guid>
+public class Driver : BaseEntity
 {
 
     public string Name { get; set; }
