@@ -31,10 +31,10 @@ public class BaseRepository <T> : IRepository<T> where T : class
         await _dbSet.AddAsync(entity);
     }
 
-    public async Task DeleteAsync(T entity)
+    public async Task<bool> DeleteAsync(T entity)
     {
         _dbSet.Remove(entity);
-        await Task.CompletedTask;
+        return true;
     }
 
     public async Task<bool> SaveChangesAsync()
