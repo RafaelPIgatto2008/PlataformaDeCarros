@@ -1,0 +1,16 @@
+﻿using Microsoft.EntityFrameworkCore;
+using PlataformaDeCarros.Data;
+using PlataformaDeCarros.Entities;
+using PlataformaDeCarros.Interface;
+
+namespace PlataformaDeCarros.Repositories;
+
+public class DriverRepository : BaseRepository<Driver>, IDriverRepository
+{
+    public DriverRepository(CarsDbContext context) : base(context) { }
+
+    public async Task<Driver> GetByNameAsync(string name)
+    {
+        return await _dbSet.FirstOrDefaultAsync(c => c.Name == name);
+    }
+}
