@@ -19,23 +19,15 @@ public class CarService : ICarService
     }
     
     public async Task<CarDto> GetByBrandAsync(string brand)
-    {
+    { 
         var car = await _repository.GetByBrandAsync(brand);
-        if (car == null)
-            throw new ("Car not found");
-
-        var dto = _mapper.Map<CarDto>(car);
-        return dto;
+        return _mapper.Map<CarDto>(car);
     }
 
     public async Task<CarDto> GetByPlateAsync(string plate)
     {
         var car = await _repository.GetByPlateAsync(plate);
-        if (car == null)
-            throw new("Plate not found");
-        
-        var dto = _mapper.Map<CarDto>(car);
-        return dto;
+        return _mapper.Map<CarDto>(car);
     }
 
     public async Task<CarDto> CreateCarAsync(CarDto carDto)

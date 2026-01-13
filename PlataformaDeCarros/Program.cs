@@ -1,6 +1,11 @@
 using PlataformaDeCarros.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using PlataformaDeCarros.Interface;
+using PlataformaDeCarros.InterfaceServices;
+using PlataformaDeCarros.MappingProfille;
+using PlataformaDeCarros.Repositories;
+using PlataformaDeCarros.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +16,29 @@ builder.Services.AddDbContext<CarsDbContext>(options =>
 });
 
 builder.Services.AddEndpointsApiExplorer(); // Necessary for API endpoints
+builder.Services.AddAutoMapper(typeof(MappingProfille)); // Import MappingProfille
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly)); // For MediatR
+
+// Dependency Injection Repository
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<IAttendantRepository, AttendantRepository>();
+builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+
+// Dependency Injection Service
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<IAttendantService, AttendantService>();
+builder.Services.AddScoped<IDriverService, DriverService>();
+
+// Add Swagger
 builder.Services.AddSwaggerGen(c =>
 {
      c.SwaggerDoc("v1", new OpenApiInfo { Title = "Plataforma de Carros API", Version = "v1" });
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Free", policy => 
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
 builder.Services.AddControllers();
@@ -32,7 +57,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseCors("Free");
+app.UseAuthorization();
 app.MapControllers();
-
 
 app.Run();
