@@ -2,23 +2,24 @@
 using PlataformaDeCarros.Commands.Car;
 using PlataformaDeCarros.DTOs;
 using PlataformaDeCarros.InterfaceServices;
+using PlataformaDeCarros.UnitOfWork;
 
 namespace PlataformaDeCarros.Handlers.CarsHandlers;
 
 public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, bool>
 {
     private readonly ILogger<CreateCarCommandHandler> _logger;
-    private readonly ICarService _carService;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public CreateCarCommandHandler(ILogger<CreateCarCommandHandler> logger, ICarService carService)
+    public CreateCarCommandHandler(ILogger<CreateCarCommandHandler> logger, IUnitOfWork unitOfWork)
     {
         _logger = logger;
-        _carService = carService;
+        _unitOfWork = unitOfWork;
     }
     
     public async Task<bool> Handle(CreateCarCommand request, CancellationToken cancellationToken)
     {
-        var existsCar = await _carService.GetByPlateAsync(request.Dto.Plate);
+        var existsCar = await _unitOfWork.CarService.GetByPlateAsync(request.Dto.Plate);
         if (existsCar != null)
             throw new Exception("This plate already registered");
         
@@ -31,7 +32,7 @@ public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, bool>
             Plate = request.Dto.Plate,
         };
         
-        await _carService.CreateCarAsync(newCar);
+        await _unitOfWork.CarService.CreateCarAsync(newCar);
         return true;
     }
 }

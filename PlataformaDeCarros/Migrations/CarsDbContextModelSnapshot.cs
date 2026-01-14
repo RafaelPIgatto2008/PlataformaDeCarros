@@ -76,8 +76,8 @@ namespace PlataformaDeCarros.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("Fabrication")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("Fabrication")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Model")
                         .IsRequired()

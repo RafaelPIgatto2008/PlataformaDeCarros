@@ -21,12 +21,18 @@ public class CarService : ICarService
     public async Task<CarDto> GetByBrandAsync(string brand)
     { 
         var car = await _repository.GetByBrandAsync(brand);
+        if (car == null)
+            return null;
+        
         return _mapper.Map<CarDto>(car);
     }
 
     public async Task<CarDto> GetByPlateAsync(string plate)
     {
         var car = await _repository.GetByPlateAsync(plate);
+        if (car == null)
+            return null;
+        
         return _mapper.Map<CarDto>(car);
     }
 
