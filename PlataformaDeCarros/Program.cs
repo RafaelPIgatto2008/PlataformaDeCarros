@@ -6,6 +6,7 @@ using PlataformaDeCarros.InterfaceServices;
 using PlataformaDeCarros.MappingProfille;
 using PlataformaDeCarros.Repositories;
 using PlataformaDeCarros.Services;
+using PlataformaDeCarros.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,9 @@ builder.Services.AddScoped<IDriverRepository, DriverRepository>();
 builder.Services.AddScoped<ICarService, CarService>();
 builder.Services.AddScoped<IAttendantService, AttendantService>();
 builder.Services.AddScoped<IDriverService, DriverService>();
+
+// Add UnitOfWork
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Add Swagger
 builder.Services.AddSwaggerGen(c =>

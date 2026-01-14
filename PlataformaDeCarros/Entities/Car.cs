@@ -7,9 +7,9 @@ public class Car : BaseEntity
     public string Color { get; set; }
     public string Brand { get; set; }
     public string Plate { get; set; }
-    public DateTime Fabrication { get; set; } // Year of fabrication
+    public int Fabrication { get; set; } // Year of fabrication
     
-    public Car(string model, string color, string brand, string plate, DateTime fabrication)
+    public Car(string model, string color, string brand, string plate, int fabrication)
     {
         Model = model;
         Color = color;

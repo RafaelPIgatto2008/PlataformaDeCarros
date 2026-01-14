@@ -6,5 +6,5 @@ public class CarDto
     public string Brand { get; set; }
     public string Color { get; set; }
     public string Plate { get; set; }
-    public DateTime Fabrication { get; set; }
+    public int Fabrication { get; set; }
 }
