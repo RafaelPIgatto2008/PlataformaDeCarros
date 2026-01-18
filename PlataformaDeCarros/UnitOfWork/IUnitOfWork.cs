@@ -1,13 +1,12 @@
 ﻿using PlataformaDeCarros.Interface;
-using PlataformaDeCarros.InterfaceServices;
 
 namespace PlataformaDeCarros.UnitOfWork;
 
 public interface IUnitOfWork : IDisposable
 {
-    ICarService CarService { get; }
-    IDriverService DriverService { get; }
-    IAttendantService AttendantService { get; }
+    ICarRepository CarRepository { get; }
+    IDriverRepository DriverRepository { get; }
+    IAttendantRepository AttendantRepository { get; }
     
     Task<bool> CommitAsync();
 }

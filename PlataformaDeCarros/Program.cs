@@ -2,10 +2,8 @@ using PlataformaDeCarros.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PlataformaDeCarros.Interface;
-using PlataformaDeCarros.InterfaceServices;
 using PlataformaDeCarros.MappingProfille;
 using PlataformaDeCarros.Repositories;
-using PlataformaDeCarros.Services;
 using PlataformaDeCarros.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,9 +24,6 @@ builder.Services.AddScoped<IAttendantRepository, AttendantRepository>();
 builder.Services.AddScoped<IDriverRepository, DriverRepository>();
 
 // Dependency Injection Service
-builder.Services.AddScoped<ICarService, CarService>();
-builder.Services.AddScoped<IAttendantService, AttendantService>();
-builder.Services.AddScoped<IDriverService, DriverService>();
 
 // Add UnitOfWork
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
