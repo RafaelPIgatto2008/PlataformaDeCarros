@@ -1,9 +1,10 @@
-﻿using MediatR;
+﻿using FluentResults;
+using MediatR;
 using PlataformaDeCarros.DTOs;
 
 namespace PlataformaDeCarros.Commands.Car;
 
-public class CreateCarCommand : IRequest<bool>
+public class CreateCarCommand : IRequest<Result<bool>>
 {
     public CarDto Dto { get; set; }
 

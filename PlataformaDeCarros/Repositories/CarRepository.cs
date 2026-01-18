@@ -9,13 +9,13 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
 {
     public CarRepository(CarsDbContext context) : base(context) { }
 
-    public async Task<Car> GetByPlateAsync(string plate)
+    public async Task<Car> GetByPlateAsync(string plate, CancellationToken cancellationToken)
     {
-        return await _dbSet.FirstOrDefaultAsync(c => c.Plate == plate);
+        return await _dbSet.FirstOrDefaultAsync(c => c.Plate == plate, cancellationToken);
     }
 
-    public async Task<Car> GetByBrandAsync(string brand)
+    public async Task<Car> GetByBrandAsync(string brand, CancellationToken cancellationToken)
     {
-        return await _dbSet.FirstOrDefaultAsync(c => c.Brand == brand);
+        return await _dbSet.FirstOrDefaultAsync(c => c.Brand == brand, cancellationToken);
     }
 }

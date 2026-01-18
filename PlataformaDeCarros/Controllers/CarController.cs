@@ -8,20 +8,14 @@ namespace PlataformaDeCarros.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 
-public class CarController: ControllerBase
+public class CarController(IMediator mediator, ILogger<CarController> logger): ControllerBase
 {
     private readonly IMediator _mediator;
     private readonly ILogger<CarController> _logger;
-
-    public CarController(IMediator mediator, ILogger<CarController> logger)
-    {
-        _mediator = mediator;
-        _logger = logger;
-    }
     
     [HttpPost("register-car")]
-    [ProducesResponseType(200)]
-    [ProducesResponseType(400)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateCar( [FromBody] CarDto dto, CancellationToken cancellationToken)
     {
         try
