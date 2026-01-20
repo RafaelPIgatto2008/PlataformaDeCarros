@@ -1,6 +1,6 @@
-﻿using PlataformaDeCarros.Interface;
+﻿using Plataform.Domain.Interface;
 
-namespace PlataformaDeCarros.UnitOfWork;
+namespace Plataform.Infraestructure.UnitOfWork;
 
 public interface IUnitOfWork : IDisposable
 {

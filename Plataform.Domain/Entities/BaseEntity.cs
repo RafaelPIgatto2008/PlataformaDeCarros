@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PlataformaDeCarros.Entities;
+namespace Plataform.Domain.Entities;
 
 public abstract class BaseEntity
 {

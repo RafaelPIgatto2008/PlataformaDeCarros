@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Plataform.Domain.Entities;
+using Plataform.Domain.Interface;
 using Plataform.Infraestructure.Data;
-using PlataformaDeCarros.Entities;
-using PlataformaDeCarros.Interface;
 
 namespace Plataform.Infraestructure.Repositories;
 

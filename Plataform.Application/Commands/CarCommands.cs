@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 using MediatR;
-using PlataformaDeCarros.DTOs;
+using Plataform.Application.DTOs;
 
 namespace PlataformaDeCarros.Commands.Car;
 

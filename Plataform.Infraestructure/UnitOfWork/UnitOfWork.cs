@@ -1,7 +1,7 @@
-﻿using Plataform.Infraestructure.Data;
-using PlataformaDeCarros.Interface;
+﻿using Plataform.Domain.Interface;
+using Plataform.Infraestructure.Data;
 
-namespace PlataformaDeCarros.UnitOfWork;
+namespace Plataform.Infraestructure.UnitOfWork;
 
 public class UnitOfWork : IUnitOfWork
 {

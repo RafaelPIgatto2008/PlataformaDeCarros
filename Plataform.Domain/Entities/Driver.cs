@@ -1,4 +1,4 @@
-﻿namespace PlataformaDeCarros.Entities;
+﻿namespace Plataform.Domain.Entities;
 
 public class Driver : BaseEntity
 {

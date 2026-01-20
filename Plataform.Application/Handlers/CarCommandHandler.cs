@@ -1,10 +1,10 @@
 ﻿using FluentResults;
 using MediatR;
+using Plataform.Domain.Entities;
+using Plataform.Infraestructure.UnitOfWork;
 using PlataformaDeCarros.Commands.Car;
-using PlataformaDeCarros.Entities;
-using PlataformaDeCarros.UnitOfWork;
 
-namespace PlataformaDeCarros.Handlers;
+namespace Plataform.Application.Handlers;
 
 public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, Result<bool>>
 {
