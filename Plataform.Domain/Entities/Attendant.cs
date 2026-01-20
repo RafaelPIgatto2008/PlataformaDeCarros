@@ -1,4 +1,4 @@
-﻿namespace PlataformaDeCarros.Entities;
+﻿namespace Plataform.Domain.Entities;
 
 public class Attendant : BaseEntity
 {
@@ -10,4 +10,17 @@ public class Attendant : BaseEntity
     public bool IsActive { get; set; } = true;
     
     public Attendant() { }
+    
+    public void Deactivate() 
+    {
+        IsActive = false;
+    }
+
+    public void UpdateContact(string email, string phone)
+    {
+        // Validações básicas antes de atribuir
+        if (string.IsNullOrWhiteSpace(email)) throw new Exception("Email inválido");
+        Email = email;
+        Phone = phone;
+    }
 }

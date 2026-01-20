@@ -1,10 +1,10 @@
 ﻿using FluentResults;
 using MediatR;
-using PlataformaDeCarros.Commands;
-using PlataformaDeCarros.Entities;
-using PlataformaDeCarros.UnitOfWork;
+using Plataform.Application.Commands;
+using Plataform.Domain.Entities;
+using Plataform.Infraestructure.UnitOfWork;
 
-namespace PlataformaDeCarros.Handlers.CarsHandlers;
+namespace Plataform.Application.Handlers;
 
 public class CreateAttendantCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<CreateAttendantCommand, Result<bool>>
 {

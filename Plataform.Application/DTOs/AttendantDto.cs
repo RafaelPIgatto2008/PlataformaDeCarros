@@ -1,4 +1,4 @@
-﻿namespace PlataformaDeCarros.DTOs;
+﻿namespace Plataform.Application.DTOs;
 
 public class AttendantDto
 {

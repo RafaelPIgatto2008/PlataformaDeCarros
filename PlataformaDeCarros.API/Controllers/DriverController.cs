@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using PlataformaDeCarros.Commands;
-using PlataformaDeCarros.DTOs;
+using Plataform.Application.Commands;
+using Plataform.Application.DTOs;
 
 namespace PlataformaDeCarros.Controllers;
 

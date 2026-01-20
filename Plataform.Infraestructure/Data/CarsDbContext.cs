@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlataformaDeCarros.Entities;
+using Plataform.Domain.Entities;
 
 namespace Plataform.Infraestructure.Data;
 

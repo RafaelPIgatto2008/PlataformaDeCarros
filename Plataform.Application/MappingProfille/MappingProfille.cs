@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using PlataformaDeCarros.DTOs;
-using PlataformaDeCarros.Entities;
+using Plataform.Application.DTOs;
+using Plataform.Domain.Entities;
 
-namespace PlataformaDeCarros.MappingProfille;
+namespace Plataform.Application.MappingProfille;
 
 public class MappingProfille : Profile
 {

@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Plataform.Application.MappingProfille;
+using Plataform.Domain.Interface;
 using Plataform.Infraestructure.Data;
 using Plataform.Infraestructure.Repositories;
-using PlataformaDeCarros.Interface;
-using PlataformaDeCarros.MappingProfille;
-using PlataformaDeCarros.UnitOfWork;
+using Plataform.Infraestructure.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 

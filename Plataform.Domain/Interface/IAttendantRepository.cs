@@ -1,6 +1,6 @@
-﻿using PlataformaDeCarros.Entities;
+﻿using Plataform.Domain.Entities;
 
-namespace PlataformaDeCarros.Interface;
+namespace Plataform.Domain.Interface;
 
 public interface IAttendantRepository : IRepository<Attendant>
 {

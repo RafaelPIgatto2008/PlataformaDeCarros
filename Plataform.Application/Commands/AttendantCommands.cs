@@ -1,8 +1,8 @@
 ﻿using FluentResults;
 using MediatR;
-using PlataformaDeCarros.DTOs;
+using Plataform.Application.DTOs;
 
-namespace PlataformaDeCarros.Commands;
+namespace Plataform.Application.Commands;
 
 public class CreateAttendantCommand : IRequest<Result<bool>>
 {
