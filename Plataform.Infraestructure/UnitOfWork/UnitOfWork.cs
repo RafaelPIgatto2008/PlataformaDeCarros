@@ -1,4 +1,4 @@
-﻿using PlataformaDeCarros.Data;
+﻿using Plataform.Infraestructure.Data;
 using PlataformaDeCarros.Interface;
 
 namespace PlataformaDeCarros.UnitOfWork;

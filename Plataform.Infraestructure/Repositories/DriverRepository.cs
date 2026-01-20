@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlataformaDeCarros.Data;
+using Plataform.Infraestructure.Data;
 using PlataformaDeCarros.Entities;
 using PlataformaDeCarros.Interface;
 
-namespace PlataformaDeCarros.Repositories;
+namespace Plataform.Infraestructure.Repositories;
 
 public class DriverRepository : BaseRepository<Driver>, IDriverRepository
 {

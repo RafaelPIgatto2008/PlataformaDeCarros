@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PlataformaDeCarros.Entities;
 
-namespace PlataformaDeCarros.Data;
+namespace Plataform.Infraestructure.Data;
 
 public class CarsDbContext : DbContext
 {

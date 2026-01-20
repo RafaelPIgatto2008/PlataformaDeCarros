@@ -2,18 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using PlataformaDeCarros.Data;
+using Plataform.Infraestructure.Data;
 
 #nullable disable
 
 namespace PlataformaDeCarros.Migrations
 {
     [DbContext(typeof(CarsDbContext))]
-    partial class CarsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251215035050_Car_Driver_Attendant")]
+    partial class Car_Driver_Attendant
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace PlataformaDeCarros.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("PlataformaDeCarros.Entities.Attendant", b =>
+            modelBuilder.Entity("PlataformaDeCarros.API.Entities.Attendant", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +62,7 @@ namespace PlataformaDeCarros.Migrations
                     b.ToTable("Attendants");
                 });
 
-            modelBuilder.Entity("PlataformaDeCarros.Entities.Car", b =>
+            modelBuilder.Entity("PlataformaDeCarros.API.Entities.Car", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,8 +79,8 @@ namespace PlataformaDeCarros.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("Fabrication")
-                        .HasColumnType("integer");
+                    b.Property<DateTime>("Fabrication")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Model")
                         .IsRequired()
@@ -92,7 +95,7 @@ namespace PlataformaDeCarros.Migrations
                     b.ToTable("Cars");
                 });
 
-            modelBuilder.Entity("PlataformaDeCarros.Entities.Driver", b =>
+            modelBuilder.Entity("PlataformaDeCarros.API.Entities.Driver", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

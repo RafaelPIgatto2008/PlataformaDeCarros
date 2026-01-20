@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PlataformaDeCarros.Data;
+using Plataform.Infraestructure.Data;
 using PlataformaDeCarros.Interface;
 
-namespace PlataformaDeCarros.Repositories;
+namespace Plataform.Infraestructure.Repositories;
 
 public class BaseRepository <T> : IRepository<T> where T : class
 {

@@ -4,6 +4,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>PlataformaDeCarros</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,6 +21,12 @@
         </PackageReference>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Plataform.Application\Plataform.Application.csproj" />
+      <ProjectReference Include="..\Plataform.Domain\Plataform.Domain.csproj" />
+      <ProjectReference Include="..\Plataform.Infraestructure\Plataform.Infraestructure.csproj" />
     </ItemGroup>
 
 </Project>
